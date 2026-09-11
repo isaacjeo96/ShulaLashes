@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shula Lashes Studio: pestañas, cejas, uñas, cabello, faciales y tratamientos estéticos. Agenda tu cita por WhatsApp.">
+  <title>Shula Lashes Studio | Belleza integral</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="scene__blob scene__blob--1"></div>
+    <div class="scene__blob scene__blob--2"></div>
+    <div class="scene__blob scene__blob--3"></div>
+  </div>
+
+  <button class="glass glass-btn theme-toggle-btn" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+    <span class="icon-dark" aria-hidden="true">☀️</span>
+    <span class="icon-light" aria-hidden="true">🌙</span>
+  </button>
+  <div class="glass-toast-region" id="toast-region" role="region" aria-label="Notificaciones" aria-live="polite"></div>
+
+  <main>
+    <nav class="site-nav" aria-label="Navegacion principal">
+      <a class="brand" href="#inicio"><img src="assets/logo/ShulaLashesLogo.png" alt="Shula Lashes Studio"></a>
+      <button class="glass glass-btn nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menu">
+        <span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span>
+      </button>
+      <div class="site-nav__links" id="primary-menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#faq">FAQ</a>
+        <a class="glass glass-btn glass-btn--primary glass-btn--sm" href="#servicios">Ver servicios</a>
+      </div>
+    </nav>
+
+    <header class="hero salon-hero" id="inicio">
+      <span class="hero__kicker">Belleza integral para sentirte tu</span>
+      <h1 class="hero__title">Tu esencia.<br>Nuestra maestria.</h1>
+      <p class="hero__sub">Pestañas, cejas, uñas, cabello, faciales y tratamientos esteticos en un solo espacio. Cuidamos cada detalle para que salgas sintiendote autentica, comoda y radiante.</p>
+      <div class="hero__cta">
+        <a class="glass glass-btn glass-btn--primary glass-btn--lg" href="#contacto">Agendar cita</a>
+        <a class="glass glass-btn glass-btn--ghost glass-btn--lg" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+      <div class="salon-trust">
+        <span>✨ Atencion personalizada</span><span>♡ Resultados que te representan</span><span>📍 Visitanos en el salon</span>
+      </div>
+    </header>
+
+    <section class="section salon-section" id="servicios">
+      <div class="section__header">
+        <div><span class="eyebrow">Lo que hacemos</span><h2 class="section__title">Servicios para tu mejor version</h2></div>
+        <span class="section__subtitle">Precios en MXN</span>
+      </div>
+
+      <div class="service-group">
+        <h3 class="service-group__title">Pestañas y cejas</h3>
+        <div class="service-grid">
+          <article class="glass glass-card service-card"><span class="service-card__tag">Mirada</span><h4>Pestañas Clasicas</h4><p>Una extension por cada pestaña natural para un efecto de rimel elegante.</p><strong>$650 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Mirada</span><h4>Pestañas Hibridas</h4><p>La combinacion de clasico y volumen para una mirada con textura y sofisticacion.</p><strong>$750 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Mirada</span><h4>Efecto Rimel</h4><p>Grosor y definicion con el look de pestañas maquilladas todos los dias.</p><strong>$800 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Mirada</span><h4>Efecto Wispy</h4><p>Longitudes mixtas y picos definidos para un estilo moderno tipo Kim K.</p><strong>$800 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Mirada</span><h4>Volumen Hawaiano</h4><p>Acabado suave, tupido y ligero para resaltar sin exceso.</p><strong>$900 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Mirada</span><h4>Volumen Americano</h4><p>Maximo impacto y densidad con un abanico tupido y glamuroso.</p><strong>$1,200 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Cejas</span><h4>Laminado de cejas</h4><p>Disciplina y redireccion de vellos para una ceja organica y con volumen.</p><strong>$250 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Cejas</span><h4>Microblading</h4><p>Micropigmentacion pelo a pelo para cejas naturales, simetricas y duraderas.</p><strong>$2,800 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Cejas</span><h4>Lash Lifting</h4><p>Elevacion desde la raiz para mayor longitud y curvatura natural.</p><strong>Desde $360 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Cejas</span><h4>Ceja HD</h4><p>Diseño y sombreado temporal para un marco del rostro impecable.</p><strong>$400 MXN</strong></article>
+        </div>
+      </div>
+
+      <div class="service-group">
+        <h3 class="service-group__title">Cabello</h3>
+        <div class="service-grid">
+          <article class="glass glass-card service-card"><span class="service-card__tag">Cabello</span><h4>Corte de cabello</h4><p>Diseño adaptado a tu rostro y tipo de cabello para mantenerlo sano y con forma.</p><strong>$120 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Cabello</span><h4>Nanoplastia / Keratina</h4><p>Alisado organico y restauracion profunda para eliminar frizz y aportar brillo espejo.</p><strong>Desde $700 MXN</strong><small>Chico $700 · Mediano $900 · Largo $1,100 · Extra largo $1,400</small></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Cabello</span><h4>Tinte profesional</h4><p>Color con productos de alta calidad, cuidando la integridad de tu cabello.</p><strong>$500 MXN</strong></article>
+        </div>
+      </div>
+
+      <div class="service-group">
+        <h3 class="service-group__title">Uñas, pies y cuidado facial</h3>
+        <div class="service-grid">
+          <article class="glass glass-card service-card"><span class="service-card__tag">Pies</span><h4>Pedi-Spa</h4><p>Relajacion, exfoliacion y limpieza profunda para tus pies.</p><strong>$380 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Pies</span><h4>Acripie</h4><p>Recubrimiento de acrilico para durabilidad extrema y forma estetica.</p><strong>$450 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Uñas</span><h4>Base Rubber</h4><p>Refuerzo de alta resistencia para ayudar al crecimiento de la uña natural.</p><strong>$260 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Uñas</span><h4>Gelish Manos</h4><p>Esmaltado en gel con brillo impecable hasta por 21 dias.</p><strong>$130 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Uñas</span><h4>Gelish Pies</h4><p>Esmaltado en gel con brillo impecable hasta por 21 dias.</p><strong>$120 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Facial</span><h4>Limpieza Facial</h4><p>Limpieza e hidratacion para eliminar impurezas y devolver luminosidad.</p><strong>$390 MXN</strong></article>
+        </div>
+      </div>
+
+      <div class="service-group">
+        <h3 class="service-group__title">Otros tratamientos</h3>
+        <div class="service-grid">
+          <article class="glass glass-card service-card"><span class="service-card__tag">Piel</span><h4>Depilacion con cera</h4><p>Retiro de vello con cera de alta calidad para una piel suave.</p><strong>$150 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Estetica</span><h4>Perforaciones</h4><p>Equipo esterilizado y protocolos estrictos de higiene.</p><strong>$250 MXN</strong></article>
+          <article class="glass glass-card service-card"><span class="service-card__tag">Valoracion</span><h4>Eliminacion de verrugas</h4><p>Procedimiento estetico para verrugas pequeñas. Sujeto a valoracion.</p><strong>Desde $200 MXN</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section salon-section salon-gallery" id="galeria">
+      <div class="section__header"><div><span class="eyebrow">Resultados reales</span><h2 class="section__title">Una mirada a nuestro trabajo</h2></div></div>
+      <div class="gallery-grid">
+        <img src="assets/img/Mirada/Pestañas.jpeg" alt="Diseño de pestañas realizado en Shula Lashes" loading="lazy" decoding="async">
+        <img src="assets/img/Uñas/Uñas.jpeg" alt="Diseño de uñas realizado en Shula Lashes" loading="lazy" decoding="async">
+        <img src="assets/img/Cabello/Comparacion.jpeg" alt="Antes y despues de tratamiento capilar" loading="lazy" decoding="async">
+        <img src="assets/img/Local/Local.jpeg" alt="Interior del salon Shula Lashes" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="section salon-section" id="promociones">
+      <div class="section__header"><div><span class="eyebrow">Momentos para consentirte</span><h2 class="section__title">Promociones y beneficios</h2></div></div>
+      <div class="promo-grid">
+        <article class="glass glass-card promo-card"><span class="service-card__tag">Nuevas clientas</span><h3>Tu primera visita</h3><p>Escribenos para conocer la promocion vigente para nuevas clientas.</p><a class="glass glass-btn glass-btn--ghost glass-btn--sm" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20conocer%20la%20promocion%20para%20nuevas%20clientas" target="_blank" rel="noopener">Preguntar promocion</a></article>
+        <article class="glass glass-card promo-card"><span class="service-card__tag">Paquetes</span><h3>Combina tus servicios</h3><p>Pregunta por paquetes de mirada, uñas y cuidado facial para aprovechar mejor tu visita.</p><a class="glass glass-btn glass-btn--ghost glass-btn--sm" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20conocer%20los%20paquetes%20disponibles" target="_blank" rel="noopener">Ver paquetes</a></article>
+        <article class="glass glass-card promo-card"><span class="service-card__tag">Proximamente</span><h3>Club Shula</h3><p>Muy pronto podras crear tu cuenta, acumular beneficios y recibir recompensas por tus visitas.</p><span class="promo-card__note">Registro en preparacion</span></article>
+      </div>
+    </section>
+
+    <section class="section salon-section" id="opiniones">
+      <div class="section__header"><div><span class="eyebrow">Lo que dicen de nosotras</span><h2 class="section__title">Opiniones de nuestras clientas</h2></div></div>
+      <div class="review-grid">
+        <article class="glass glass-card review-card"><div class="review-stars">★★★★★</div><p>“Un espacio para disfrutar, consentirte y salir feliz con tu resultado.”</p><small>Comparte tu experiencia con nosotras</small></article>
+        <article class="glass glass-card review-card"><div class="review-stars">★★★★★</div><p>“Tu opinion nos ayuda a seguir creciendo y a que mas personas nos conozcan.”</p><small>Reseñas verificadas proximamente</small></article>
+      </div>
+      <a class="glass glass-btn glass-btn--ghost" href="https://www.google.com/maps/search/?api=1&query=54+Alberto+M.+Gonz%C3%A1lez%2C+Ciudad+de+M%C3%A9xico%2C+Ciudad+de+M%C3%A9xico%2C+09260" target="_blank" rel="noopener">Dejar una reseña en Google ↗</a>
+    </section>
+
+    <section class="glass salon-cta" id="contacto">
+      <span class="eyebrow">Tu cita empieza aqui</span>
+      <h2>¿Lista para consentirte?</h2>
+      <p>Escribenos para consultar disponibilidad o visitanos en nuestro salon de Ciudad de Mexico. Pronto podras reservar y acumular beneficios directamente desde tu cuenta.</p>
+      <div class="hero__cta">
+        <a class="glass glass-btn glass-btn--primary glass-btn--lg" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20consultar%20disponibilidad" target="_blank" rel="noopener">Consultar disponibilidad</a>
+        <a class="glass glass-btn glass-btn--ghost glass-btn--lg" href="https://www.google.com/maps/search/?api=1&query=54+Alberto+M.+Gonz%C3%A1lez%2C+Ciudad+de+M%C3%A9xico%2C+Ciudad+de+M%C3%A9xico%2C+09260" target="_blank" rel="noopener">Como llegar</a>
+      </div>
+    </section>
+
+    <section class="section salon-section faq-section" id="faq">
+      <div class="section__header"><div><span class="eyebrow">Antes de tu visita</span><h2 class="section__title">Preguntas frecuentes</h2></div></div>
+      <div class="faq-list">
+        <details class="glass faq-item"><summary>¿Como puedo agendar una cita?</summary><p>Por ahora puedes escribirnos por WhatsApp para consultar disponibilidad. Pronto habilitaremos reservas en linea.</p></details>
+        <details class="glass faq-item"><summary>¿Se solicita anticipo?</summary><p>La politica de anticipo puede variar segun el servicio. Confirma el monto al reservar, especialmente para servicios de larga duracion o personalizados.</p></details>
+        <details class="glass faq-item"><summary>¿Que pasa si necesito cancelar?</summary><p>Avísanos con anticipacion para poder liberar el horario y ayudarte a reprogramar tu cita. La politica final se publicara aqui.</p></details>
+        <details class="glass faq-item"><summary>¿Debo llegar antes de mi cita?</summary><p>Te recomendamos llegar unos minutos antes para comenzar a tiempo y disfrutar tu experiencia con calma.</p></details>
+        <details class="glass faq-item"><summary>¿Que cuidados debo tener antes y despues?</summary><p>Al confirmar tu servicio te compartiremos las recomendaciones especificas para pestañas, cabello, uñas o faciales.</p></details>
+        <details class="glass faq-item"><summary>¿Que metodos de pago aceptan?</summary><p>Consulta los metodos disponibles al momento de reservar. Agregaremos esta informacion cuando quede confirmada.</p></details>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div><strong>Shula Lashes Studio</strong><span>Belleza, tecnica y momentos para ti.</span></div>
+      <div class="footer-links">
+        <a class="footer-link" href="https://www.google.com/maps/search/?api=1&query=54+Alberto+M.+Gonz%C3%A1lez%2C+Ciudad+de+M%C3%A9xico%2C+Ciudad+de+M%C3%A9xico%2C+09260" target="_blank" rel="noopener" aria-label="Abrir ubicación en Google Maps">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+          <span>54 Alberto M. González · Ver mapa</span>
+        </a>
+        <a class="footer-link footer-link--social" href="https://www.facebook.com/shulalashesstudio" target="_blank" rel="noopener" aria-label="Visitar Facebook de Shula Lashes Studio">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3.3 0-5 1.8-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1Z"></path></svg>
+          <span>Facebook</span>
+        </a>
+        <a class="footer-link footer-link--social" href="https://www.instagram.com/shu.lalashes" target="_blank" rel="noopener" aria-label="Visitar Instagram de Shula Lashes Studio">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="17.5" cy="6.5" r=".8" class="icon-fill"></circle></svg>
+          <span>Instagram</span>
+        </a>
+        <a class="footer-link footer-link--social" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path><path d="M9 8.5c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.2.1.4-.1.6l-.5.6c.6 1 1.3 1.6 2.3 2.1l.7-.6c.2-.2.4-.2.6-.1l1.3.6c.3.1.4.3.3.6-.2.7-.8 1.2-1.5 1.3-1.6.1-3.5-1-4.8-2.3C8.4 11.4 7.7 9.8 9 8.5Z"></path></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <small>© 2026 Shula Lashes Studio</small>
+    </footer>
+  </main>
+</body>
+</html>
