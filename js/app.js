@@ -1005,12 +1005,55 @@
       var status = document.getElementById("appointment-status");
       if (!form || !status) return;
       var date = form.elements.date;
-      if (date) date.min = new Date().toISOString().split("T")[0];
+      var time = form.elements.time;
+      var localDate = function (value) {
+        var current = value || new Date();
+        var year = current.getFullYear();
+        var month = String(current.getMonth() + 1).padStart(2, "0");
+        var day = String(current.getDate()).padStart(2, "0");
+        return year + "-" + month + "-" + day;
+      };
+      var isOpenAt = function (day, minutes) {
+        if (day === 0) return false;
+        if (day === 6) return minutes >= 600 && minutes < 840 || minutes >= 900 && minutes < 1020;
+        return minutes >= 540 && minutes < 840 || minutes >= 900 && minutes < 1260;
+      };
+      if (date) date.min = localDate();
+      var validateSchedule = function () {
+        if (!date || !time || !date.value || !time.value) return "";
+        var selectedDate = new Date(date.value + "T00:00:00");
+        var day = selectedDate.getDay();
+        var parts = time.value.split(":");
+        var minutes = Number(parts[0]) * 60 + Number(parts[1]);
+        if (!isOpenAt(day, minutes)) {
+          return day === 0
+            ? "El salón permanece cerrado los domingos."
+            : "La hora elegida está fuera del horario de atención o coincide con el descanso.";
+        }
+        if (date.value === localDate() && minutes <= new Date().getHours() * 60 + new Date().getMinutes()) {
+          return "La hora elegida ya pasó. Selecciona una hora posterior a la actual.";
+        }
+        return "";
+      };
+      if (date) date.addEventListener("change", function () {
+        var error = validateSchedule();
+        if (error) status.textContent = error;
+      });
+      if (time) time.addEventListener("change", function () {
+        var error = validateSchedule();
+        if (error) status.textContent = error;
+      });
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         if (!AppointmentForm.endpoint) {
           status.textContent = "El formulario está preparado. Falta conectar el enlace de Google Apps Script.";
+          status.className = "appointment-form__status is-error";
+          return;
+        }
+        var scheduleError = validateSchedule();
+        if (scheduleError) {
+          status.textContent = scheduleError;
           status.className = "appointment-form__status is-error";
           return;
         }
@@ -1025,7 +1068,7 @@
           body: new URLSearchParams(new FormData(form))
         }).then(function () {
           form.reset();
-          if (date) date.min = new Date().toISOString().split("T")[0];
+          if (date) date.min = localDate();
           status.textContent = "Solicitud enviada. Te contactaremos por WhatsApp para confirmar disponibilidad.";
           status.className = "appointment-form__status is-success";
         }).catch(function () {
