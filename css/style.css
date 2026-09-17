@@ -3273,6 +3273,9 @@ label {
 
 /* Salon landing */
 .site-nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-overlay);
   max-width: 1180px;
   margin: 0 auto;
   padding: 24px;
@@ -3280,6 +3283,9 @@ label {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  background: color-mix(in srgb, var(--color-bg) 72%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 .brand {
   display: inline-flex;
@@ -3375,7 +3381,7 @@ label {
 .footer-link--social svg .icon-fill { fill: currentColor; stroke: none; }
 @media (max-width: 640px) {
   .theme-toggle-btn { right: 76px; }
-  .site-nav { position: relative; padding: 18px 72px 18px 20px; }
+  .site-nav { position: sticky; padding: 14px 72px 14px 20px; }
   .nav-toggle { display: flex; position: absolute; right: 20px; top: 16px; width: 42px; height: 42px; padding: 0; flex-direction: column; justify-content: center; gap: 4px; }
   .nav-toggle__line { width: 17px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s, opacity .2s; }
   .nav-toggle[aria-expanded="true"] .nav-toggle__line:first-child { transform: translateY(6px) rotate(45deg); }
@@ -3386,7 +3392,15 @@ label {
   .site-nav__links a { white-space: nowrap; padding: 12px 14px; }
   .site-nav__links .glass-btn { display: flex; justify-content: center; margin-top: 6px; }
   .salon-hero { min-height: 82vh; padding-inline: 20px; }
-  .salon-hero .hero__title { font-size: 3.5rem; }
+  .salon-hero .hero__title { font-size: clamp(2.55rem, 12vw, 3.2rem); line-height: 1.02; }
+  .hero__sub { font-size: .92rem; line-height: 1.6; }
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .glass-btn { justify-content: center; }
+  .salon-section { padding-inline: 16px; }
+  .section__title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .service-grid,
+  .promo-grid,
+  .review-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
   .gallery-grid img:first-child { grid-row: span 1; }
 }
