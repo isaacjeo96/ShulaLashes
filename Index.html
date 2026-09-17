@@ -155,7 +155,8 @@
           <p>Enviaremos tu solicitud para confirmar disponibilidad. El horario queda reservado hasta recibir confirmación.</p>
         </div>
         <div class="appointment-form__grid">
-          <label>Nombre completo<input class="glass-input" name="name" type="text" autocomplete="name" required></label>
+          <label>Nombre<input class="glass-input" name="firstName" type="text" autocomplete="given-name" required></label>
+          <label>Apellido<input class="glass-input" name="lastName" type="text" autocomplete="family-name" required></label>
           <label>WhatsApp<input class="glass-input" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
           <label class="appointment-form__wide">Servicios de interés <span class="appointment-form__hint">Puedes seleccionar más de uno.</span><select class="glass-input" name="services" multiple required size="5">
             <option>Pestañas clásicas</option><option>Pestañas híbridas</option><option>Efecto rímel</option><option>Efecto Wispy</option><option>Volumen hawaiano</option><option>Volumen americano</option>
@@ -169,6 +170,7 @@
           <label>Hora preferida<input class="glass-input" name="time" type="time" step="900" required></label>
           <label class="appointment-form__wide">Comentarios (opcional)<textarea class="glass-input" name="notes" rows="3" maxlength="500"></textarea></label>
         </div>
+        <input name="name" type="hidden">
         <input class="appointment-form__trap" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="glass glass-btn glass-btn--primary" type="submit">Enviar solicitud</button>
         <p class="appointment-form__status" id="appointment-status" role="status" aria-live="polite"></p>

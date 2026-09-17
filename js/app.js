@@ -1008,6 +1008,9 @@
       var time = form.elements.time;
       var services = form.elements.services;
       var service = form.elements.service;
+      var legacyName = form.elements.name;
+      var firstName = form.elements.firstName;
+      var lastName = form.elements.lastName;
       var localDate = function (value) {
         var current = value || new Date();
         var year = current.getFullYear();
@@ -1068,6 +1071,7 @@
           return;
         }
         service.value = selectedServices.join(" + ");
+        if (legacyName) legacyName.value = firstName.value.trim() + " " + lastName.value.trim();
         var trap = form.elements.website;
         if (trap && trap.value) return;
         var submit = form.querySelector('[type="submit"]');

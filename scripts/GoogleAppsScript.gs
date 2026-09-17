@@ -3,14 +3,26 @@ const SHEET_NAME = 'Solicitudes';
 
 function doPost(e) {
   const data = e.parameter;
-  if (!data.name || !data.phone || !data.service || !data.date || !data.time) {
+  if (!data.firstName || !data.lastName || !data.phone || !data.service || !data.date || !data.time) {
     return jsonResponse({ ok: false, error: 'Faltan campos obligatorios.' });
   }
   if (data.website) return jsonResponse({ ok: true });
 
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
   if (!sheet) throw new Error(`No existe la hoja "${SHEET_NAME}".`);
-  sheet.appendRow([new Date(), data.name, data.phone, data.service, data.date, data.time, data.notes || '', 'Pendiente']);
+  const receivedAt = new Date();
+  sheet.appendRow([
+    Utilities.formatDate(receivedAt, Session.getScriptTimeZone(), 'yyyy-MM-dd'),
+    Utilities.formatDate(receivedAt, Session.getScriptTimeZone(), 'HH:mm:ss'),
+    data.firstName,
+    data.lastName,
+    data.phone,
+    data.service,
+    data.date,
+    data.time,
+    data.notes || '',
+    'Pendiente'
+  ]);
   return jsonResponse({ ok: true });
 }
 
