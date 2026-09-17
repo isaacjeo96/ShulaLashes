@@ -3337,6 +3337,20 @@ label {
 .salon-cta { max-width: 780px; margin: 80px auto; padding: 54px 28px; text-align: center; border-radius: var(--radius-2xl); }
 .salon-cta h2 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 12px; }
 .salon-cta p { max-width: 540px; margin: 0 auto 26px; opacity: .7; line-height: 1.65; }
+.business-hours {
+  max-width: 540px;
+  margin: 0 auto 26px;
+  display: grid;
+  gap: 6px;
+  font-size: .86rem;
+  line-height: 1.5;
+}
+.business-hours strong {
+  color: var(--accent-aqua);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+.business-hours span { opacity: .72; }
 .promo-grid, .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
 .promo-card, .review-card { min-height: 205px; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; }
 .promo-card h3 { font-family: var(--font-display); font-size: 1.45rem; margin-bottom: 10px; }
