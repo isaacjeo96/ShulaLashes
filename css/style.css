@@ -3281,7 +3281,24 @@ label {
   justify-content: space-between;
   gap: 24px;
 }
-.brand img { width: 132px; height: auto; display: block; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+.brand__logo {
+  width: 132px;
+  height: auto;
+  display: block;
+}
+.brand__logo--light {
+  display: none;
+}
+[data-theme="light"] .brand__logo--dark {
+  display: none;
+}
+[data-theme="light"] .brand__logo--light {
+  display: block;
+}
 .site-nav__links { display: flex; align-items: center; gap: 22px; font-size: .85rem; }
 .site-nav__links { overflow-x: auto; scrollbar-width: none; }
 .site-nav__links::-webkit-scrollbar { display: none; }
