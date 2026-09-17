@@ -1010,6 +1010,35 @@
         toggle.setAttribute("aria-label", "Abrir menu");
       };
 
+      var SalonSections = {
+        init: function () {
+          var toggles = document.querySelectorAll(".section-toggle");
+          toggles.forEach(function (toggle) {
+            toggle.addEventListener("click", function () {
+              var content = document.getElementById(toggle.getAttribute("aria-controls"));
+              if (!content) return;
+              var expanded = toggle.getAttribute("aria-expanded") === "true";
+              toggle.setAttribute("aria-expanded", String(!expanded));
+              content.hidden = expanded;
+              var icon = toggle.querySelector(".section-toggle__icon");
+              if (icon) icon.textContent = expanded ? "+" : "−";
+            });
+          });
+        }
+      };
+
+      var FloatingSalonActions = {
+        init: function () {
+          var actions = document.querySelector(".floating-cta");
+          if (!actions) return;
+          var update = function () {
+            actions.classList.toggle("is-visible", window.scrollY > 420);
+          };
+          window.addEventListener("scroll", update, { passive: true });
+          update();
+        }
+      };
+
       toggle.addEventListener("click", function () {
         var isOpen = menu.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", String(isOpen));
@@ -1050,6 +1079,8 @@
     GlassBreadcrumb.init();
     GlassTable.init();
     SalonNavigation.init();
+    SalonSections.init();
+    FloatingSalonActions.init();
   }
 
   if (document.readyState === "loading") {

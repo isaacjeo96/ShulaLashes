@@ -19,10 +19,6 @@
     <div class="scene__blob scene__blob--3"></div>
   </div>
 
-  <button class="glass glass-btn theme-toggle-btn" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
-    <span class="icon-dark" aria-hidden="true">☀️</span>
-    <span class="icon-light" aria-hidden="true">🌙</span>
-  </button>
   <div class="glass-toast-region" id="toast-region" role="region" aria-label="Notificaciones" aria-live="polite"></div>
 
   <main>
@@ -31,6 +27,10 @@
         <img class="brand__logo brand__logo--dark" src="assets/logo/ShulaLashesLogoVectores-03.png" alt="Shula Lashes Studio">
         <img class="brand__logo brand__logo--light" src="assets/logo/ShulaLashesLogoVectores-01.png" alt="" aria-hidden="true">
       </a>
+      <button class="glass glass-btn theme-toggle-btn" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <span class="icon-dark" aria-hidden="true">☀️</span>
+        <span class="icon-light" aria-hidden="true">🌙</span>
+      </button>
       <button class="glass glass-btn nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menu">
         <span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span>
       </button>
@@ -59,10 +59,13 @@
     </header>
 
     <section class="section salon-section" id="servicios">
-      <div class="section__header">
+      <button class="section-toggle" type="button" aria-expanded="true" aria-controls="servicios-content">
+      <span class="section__header">
         <div><span class="eyebrow">Lo que hacemos</span><h2 class="section__title">Servicios para tu mejor version</h2></div>
         <span class="section__subtitle">Precios en MXN</span>
-      </div>
+      </span><span class="section-toggle__icon" aria-hidden="true">−</span>
+      </button>
+      <div id="servicios-content" class="section-content">
 
       <div class="service-group">
         <h3 class="service-group__title">Pestañas y cejas</h3>
@@ -109,34 +112,47 @@
           <article class="glass glass-card service-card"><span class="service-card__tag">Valoracion</span><h4>Eliminacion de verrugas</h4><p>Procedimiento estetico para verrugas pequeñas. Sujeto a valoracion.</p><strong>Desde $200 MXN</strong></article>
         </div>
       </div>
+      </div>
     </section>
 
     <section class="section salon-section salon-gallery" id="galeria">
-      <div class="section__header"><div><span class="eyebrow">Resultados reales</span><h2 class="section__title">Una mirada a nuestro trabajo</h2></div></div>
-      <div class="gallery-grid">
+      <button class="section-toggle" type="button" aria-expanded="false" aria-controls="galeria-content">
+        <span class="section__header"><span><span class="eyebrow">Resultados reales</span><span class="section__title">Una mirada a nuestro trabajo</span></span></span><span class="section-toggle__icon" aria-hidden="true">+</span>
+      </button>
+      <div id="galeria-content" class="section-content" hidden>
+        <div class="gallery-grid">
         <img src="assets/img/Mirada/pestanas.jpeg" alt="Diseño de pestañas realizado en Shula Lashes" loading="lazy" decoding="async">
         <img src="assets/img/unas/unas.jpeg" alt="Diseño de uñas realizado en Shula Lashes" loading="lazy" decoding="async">
         <img src="assets/img/Cabello/Comparacion.jpeg" alt="Antes y despues de tratamiento capilar" loading="lazy" decoding="async">
         <img src="assets/img/Local/Local.jpeg" alt="Interior del salon Shula Lashes" loading="lazy" decoding="async">
+        </div>
       </div>
     </section>
 
     <section class="section salon-section" id="promociones">
-      <div class="section__header"><div><span class="eyebrow">Momentos para consentirte</span><h2 class="section__title">Promociones y beneficios</h2></div></div>
-      <div class="promo-grid">
+      <button class="section-toggle" type="button" aria-expanded="false" aria-controls="promociones-content">
+        <span class="section__header"><span><span class="eyebrow">Momentos para consentirte</span><span class="section__title">Promociones y beneficios</span></span></span><span class="section-toggle__icon" aria-hidden="true">+</span>
+      </button>
+      <div id="promociones-content" class="section-content" hidden>
+        <div class="promo-grid">
         <article class="glass glass-card promo-card"><span class="service-card__tag">Nuevas clientas</span><h3>Tu primera visita</h3><p>Escribenos para conocer la promocion vigente para nuevas clientas.</p><a class="glass glass-btn glass-btn--ghost glass-btn--sm" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20conocer%20la%20promocion%20para%20nuevas%20clientas" target="_blank" rel="noopener noreferrer">Preguntar promocion</a></article>
         <article class="glass glass-card promo-card"><span class="service-card__tag">Paquetes</span><h3>Combina tus servicios</h3><p>Pregunta por paquetes de mirada, uñas y cuidado facial para aprovechar mejor tu visita.</p><a class="glass glass-btn glass-btn--ghost glass-btn--sm" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20conocer%20los%20paquetes%20disponibles" target="_blank" rel="noopener noreferrer">Ver paquetes</a></article>
         <article class="glass glass-card promo-card"><span class="service-card__tag">Proximamente</span><h3>Club Shula</h3><p>Muy pronto podras crear tu cuenta, acumular beneficios y recibir recompensas por tus visitas.</p><span class="promo-card__note">Registro en preparacion</span></article>
+        </div>
       </div>
     </section>
 
     <section class="section salon-section" id="opiniones">
-      <div class="section__header"><div><span class="eyebrow">Lo que dicen de nosotras</span><h2 class="section__title">Opiniones de nuestras clientas</h2></div></div>
-      <div class="review-grid">
+      <button class="section-toggle" type="button" aria-expanded="false" aria-controls="opiniones-content">
+        <span class="section__header"><span><span class="eyebrow">Lo que dicen de nosotras</span><span class="section__title">Opiniones de nuestras clientas</span></span></span><span class="section-toggle__icon" aria-hidden="true">+</span>
+      </button>
+      <div id="opiniones-content" class="section-content" hidden>
+        <div class="review-grid">
         <article class="glass glass-card review-card"><div class="review-stars">★★★★★</div><p>“Un espacio para disfrutar, consentirte y salir feliz con tu resultado.”</p><small>Comparte tu experiencia con nosotras</small></article>
         <article class="glass glass-card review-card"><div class="review-stars">★★★★★</div><p>“Tu opinion nos ayuda a seguir creciendo y a que mas personas nos conozcan.”</p><small>Reseñas verificadas proximamente</small></article>
+        </div>
+        <a class="glass glass-btn glass-btn--ghost" href="https://www.google.com/maps/search/?api=1&query=54+Alberto+M.+Gonz%C3%A1lez%2C+Ciudad+de+M%C3%A9xico%2C+Ciudad+de+M%C3%A9xico%2C+09260" target="_blank" rel="noopener noreferrer">Dejar una reseña en Google ↗</a>
       </div>
-      <a class="glass glass-btn glass-btn--ghost" href="https://www.google.com/maps/search/?api=1&query=54+Alberto+M.+Gonz%C3%A1lez%2C+Ciudad+de+M%C3%A9xico%2C+Ciudad+de+M%C3%A9xico%2C+09260" target="_blank" rel="noopener noreferrer">Dejar una reseña en Google ↗</a>
     </section>
 
     <section class="glass salon-cta" id="contacto">
@@ -150,14 +166,18 @@
     </section>
 
     <section class="section salon-section faq-section" id="faq">
-      <div class="section__header"><div><span class="eyebrow">Antes de tu visita</span><h2 class="section__title">Preguntas frecuentes</h2></div></div>
-      <div class="faq-list">
+      <button class="section-toggle" type="button" aria-expanded="false" aria-controls="faq-content">
+        <span class="section__header"><span><span class="eyebrow">Antes de tu visita</span><span class="section__title">Preguntas frecuentes</span></span></span><span class="section-toggle__icon" aria-hidden="true">+</span>
+      </button>
+      <div id="faq-content" class="section-content" hidden>
+        <div class="faq-list">
         <details class="glass faq-item"><summary>¿Como puedo agendar una cita?</summary><p>Por ahora puedes escribirnos por WhatsApp para consultar disponibilidad. Pronto habilitaremos reservas en linea.</p></details>
         <details class="glass faq-item"><summary>¿Se solicita anticipo?</summary><p>La politica de anticipo puede variar segun el servicio. Confirma el monto al reservar, especialmente para servicios de larga duracion o personalizados.</p></details>
         <details class="glass faq-item"><summary>¿Que pasa si necesito cancelar?</summary><p>Avísanos con anticipacion para poder liberar el horario y ayudarte a reprogramar tu cita. La politica final se publicara aqui.</p></details>
         <details class="glass faq-item"><summary>¿Debo llegar antes de mi cita?</summary><p>Te recomendamos llegar unos minutos antes para comenzar a tiempo y disfrutar tu experiencia con calma.</p></details>
         <details class="glass faq-item"><summary>¿Que cuidados debo tener antes y despues?</summary><p>Al confirmar tu servicio te compartiremos las recomendaciones especificas para pestañas, cabello, uñas o faciales.</p></details>
         <details class="glass faq-item"><summary>¿Que metodos de pago aceptan?</summary><p>Consulta los metodos disponibles al momento de reservar. Agregaremos esta informacion cuando quede confirmada.</p></details>
+        </div>
       </div>
     </section>
 
@@ -184,5 +204,9 @@
       <small>© 2026 Shula Lashes Studio</small>
     </footer>
   </main>
+  <div class="floating-cta" aria-label="Acciones rápidas">
+    <a class="glass glass-btn glass-btn--primary" href="#contacto"><span aria-hidden="true">📅</span><span>Agendar cita</span></a>
+    <a class="glass glass-btn glass-btn--ghost" href="https://wa.me/?text=Hola%20Shula%20Lashes%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
+  </div>
 </body>
 </html>
