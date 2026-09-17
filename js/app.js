@@ -1006,6 +1006,8 @@
       if (!form || !status) return;
       var date = form.elements.date;
       var time = form.elements.time;
+      var services = form.elements.services;
+      var service = form.elements.service;
       var localDate = function (value) {
         var current = value || new Date();
         var year = current.getFullYear();
@@ -1057,6 +1059,15 @@
           status.className = "appointment-form__status is-error";
           return;
         }
+        var selectedServices = services
+          ? Array.from(services.selectedOptions).map(function (option) { return option.value; })
+          : [];
+        if (!selectedServices.length) {
+          status.textContent = "Selecciona al menos un servicio.";
+          status.className = "appointment-form__status is-error";
+          return;
+        }
+        service.value = selectedServices.join(" + ");
         var trap = form.elements.website;
         if (trap && trap.value) return;
         var submit = form.querySelector('[type="submit"]');

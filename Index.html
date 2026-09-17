@@ -157,14 +157,14 @@
         <div class="appointment-form__grid">
           <label>Nombre completo<input class="glass-input" name="name" type="text" autocomplete="name" required></label>
           <label>WhatsApp<input class="glass-input" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
-          <label>Servicio<select class="glass-input" name="service" required>
-            <option value="">Selecciona un servicio</option>
+          <label class="appointment-form__wide">Servicios de interés <span class="appointment-form__hint">Puedes seleccionar más de uno.</span><select class="glass-input" name="services" multiple required size="5">
             <option>Pestañas clásicas</option><option>Pestañas híbridas</option><option>Efecto rímel</option><option>Efecto Wispy</option><option>Volumen hawaiano</option><option>Volumen americano</option>
             <option>Laminado de cejas</option><option>Microblading</option><option>Lash lifting</option><option>Ceja HD</option>
             <option>Corte de cabello</option><option>Nanoplastia / keratina</option><option>Tinte profesional</option>
             <option>Pedi-Spa</option><option>Acripie</option><option>Base Rubber</option><option>Gelish manos</option><option>Gelish pies</option><option>Limpieza facial</option>
             <option>Depilación con cera</option><option>Perforaciones</option><option>Eliminación de verrugas</option>
           </select></label>
+          <input name="service" type="hidden">
           <label>Fecha preferida<input class="glass-input" name="date" type="date" required></label>
           <label>Hora preferida<input class="glass-input" name="time" type="time" step="900" required></label>
           <label class="appointment-form__wide">Comentarios (opcional)<textarea class="glass-input" name="notes" rows="3" maxlength="500"></textarea></label>

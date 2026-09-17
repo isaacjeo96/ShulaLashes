@@ -3363,8 +3363,10 @@ label {
 .appointment-form__header p { opacity: .7; font-size: .84rem; line-height: 1.5; margin-bottom: 18px; }
 .appointment-form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .appointment-form label { display: grid; gap: 6px; font-size: .76rem; font-weight: 500; }
+.appointment-form__hint { font-size: .72rem; font-weight: 300; opacity: .7; }
 .appointment-form__wide { grid-column: 1 / -1; }
 .appointment-form .glass-input { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid var(--glass-border); border-radius: var(--radius-sm); background: var(--glass-white); color: var(--color-text); font: inherit; }
+.appointment-form select[multiple] { min-height: 130px; }
 .appointment-form textarea.glass-input { resize: vertical; }
 .appointment-form .glass-btn { margin-top: 18px; }
 .appointment-form__status { min-height: 1.3em; margin-top: 12px; font-size: .8rem; opacity: .78; }
