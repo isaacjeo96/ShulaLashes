@@ -999,7 +999,7 @@
   };
 
   var AppointmentForm = {
-    endpoint: "",
+    endpoint: "https://script.google.com/macros/s/AKfycbwlqJo_jZfvbUtnT9ewZ7jN_wn3-sg2jvG9oSbGOF4t6wAKFEaVzAhs-VlMux43_8DIvQ/exec",
     init: function () {
       var form = document.getElementById("appointment-form");
       var status = document.getElementById("appointment-status");
