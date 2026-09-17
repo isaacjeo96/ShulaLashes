@@ -3351,6 +3351,26 @@ label {
   font-size: 1.05rem;
 }
 .business-hours span { opacity: .72; }
+.appointment-form {
+  max-width: 780px;
+  margin: 0 auto 28px;
+  padding: 24px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  text-align: left;
+}
+.appointment-form__header h3 { font-family: var(--font-display); font-size: 1.55rem; margin-bottom: 6px; }
+.appointment-form__header p { opacity: .7; font-size: .84rem; line-height: 1.5; margin-bottom: 18px; }
+.appointment-form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.appointment-form label { display: grid; gap: 6px; font-size: .76rem; font-weight: 500; }
+.appointment-form__wide { grid-column: 1 / -1; }
+.appointment-form .glass-input { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid var(--glass-border); border-radius: var(--radius-sm); background: var(--glass-white); color: var(--color-text); font: inherit; }
+.appointment-form textarea.glass-input { resize: vertical; }
+.appointment-form .glass-btn { margin-top: 18px; }
+.appointment-form__status { min-height: 1.3em; margin-top: 12px; font-size: .8rem; opacity: .78; }
+.appointment-form__status.is-success { color: var(--accent-rose); }
+.appointment-form__status.is-error { color: #f87171; }
+.appointment-form__trap { position: absolute; left: -9999px; opacity: 0; }
 .promo-grid, .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
 .promo-card, .review-card { min-height: 205px; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; }
 .promo-card h3 { font-family: var(--font-display); font-size: 1.45rem; margin-bottom: 10px; }
@@ -3415,6 +3435,9 @@ label {
   .hero__sub { font-size: .92rem; line-height: 1.6; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .glass-btn { justify-content: center; }
+  .appointment-form { padding: 18px; }
+  .appointment-form__grid { grid-template-columns: 1fr; }
+  .appointment-form__wide { grid-column: auto; }
   .salon-section { padding-inline: 16px; }
   .section__title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
   .service-grid,

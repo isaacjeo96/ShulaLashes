@@ -149,6 +149,32 @@
         <span>Sábados: 10:00 a 14:00 y 15:00 a 17:00</span>
         <span>Domingos: cerrado</span>
       </div>
+      <form class="appointment-form" id="appointment-form">
+        <div class="appointment-form__header">
+          <h3>Solicita tu cita</h3>
+          <p>Enviaremos tu solicitud para confirmar disponibilidad. El horario queda reservado hasta recibir confirmación.</p>
+        </div>
+        <div class="appointment-form__grid">
+          <label>Nombre completo<input class="glass-input" name="name" type="text" autocomplete="name" required></label>
+          <label>WhatsApp<input class="glass-input" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+          <label>Servicio<select class="glass-input" name="service" required>
+            <option value="">Selecciona un servicio</option>
+            <option>Pestañas clásicas</option><option>Pestañas híbridas</option><option>Efecto rímel</option><option>Efecto Wispy</option><option>Volumen hawaiano</option><option>Volumen americano</option>
+            <option>Laminado de cejas</option><option>Microblading</option><option>Lash lifting</option><option>Ceja HD</option>
+            <option>Corte de cabello</option><option>Nanoplastia / keratina</option><option>Tinte profesional</option>
+            <option>Pedi-Spa</option><option>Acripie</option><option>Base Rubber</option><option>Gelish manos</option><option>Gelish pies</option><option>Limpieza facial</option>
+            <option>Depilación con cera</option><option>Perforaciones</option><option>Eliminación de verrugas</option>
+          </select></label>
+          <label>Fecha preferida<input class="glass-input" name="date" type="date" required></label>
+          <label>Horario preferido<select class="glass-input" name="time" required>
+            <option value="">Selecciona un horario</option><option>Por la mañana</option><option>Por la tarde</option><option>Indistinto</option>
+          </select></label>
+          <label class="appointment-form__wide">Comentarios (opcional)<textarea class="glass-input" name="notes" rows="3" maxlength="500"></textarea></label>
+        </div>
+        <input class="appointment-form__trap" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="glass glass-btn glass-btn--primary" type="submit">Enviar solicitud</button>
+        <p class="appointment-form__status" id="appointment-status" role="status" aria-live="polite"></p>
+      </form>
       <div class="hero__cta">
         <a class="glass glass-btn glass-btn--primary glass-btn--lg" href="https://wa.me/525527712359?text=Hola%20Shula%20Lashes%2C%20quiero%20consultar%20disponibilidad" target="_blank" rel="noopener noreferrer">Consultar disponibilidad</a>
         <a class="glass glass-btn glass-btn--ghost glass-btn--lg" href="https://maps.app.goo.gl/biBs7dCEDMF59gg89" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
@@ -158,7 +184,7 @@
     <section class="section salon-section faq-section" id="faq">
       <div class="section__header"><div><span class="eyebrow">Antes de tu visita</span><h2 class="section__title">Preguntas frecuentes</h2></div></div>
       <div class="faq-list">
-        <details class="glass faq-item"><summary>¿Cómo puedo agendar una cita?</summary><p>Por ahora puedes escribirnos por WhatsApp para consultar disponibilidad. Próximamente habilitaremos las reservas en línea.</p></details>
+        <details class="glass faq-item"><summary>¿Cómo puedo agendar una cita?</summary><p>Completa el formulario de solicitud o escríbenos por WhatsApp. Te confirmaremos la disponibilidad antes de considerar agendada tu cita.</p></details>
         <details class="glass faq-item"><summary>¿Se solicita anticipo?</summary><p>La política de anticipo puede variar según el servicio. Confirma el monto al reservar, especialmente para servicios de larga duración o personalizados.</p></details>
         <details class="glass faq-item"><summary>¿Qué pasa si necesito cancelar?</summary><p>Avísanos con anticipación para liberar el horario y ayudarte a reprogramar tu cita. La política final se publicará aquí.</p></details>
         <details class="glass faq-item"><summary>¿Debo llegar antes de mi cita?</summary><p>Te recomendamos llegar unos minutos antes para comenzar a tiempo y disfrutar tu experiencia con calma.</p></details>

@@ -998,6 +998,46 @@
     if (wrap) new GlassTable(wrap);
   };
 
+  var AppointmentForm = {
+    endpoint: "",
+    init: function () {
+      var form = document.getElementById("appointment-form");
+      var status = document.getElementById("appointment-status");
+      if (!form || !status) return;
+      var date = form.elements.date;
+      if (date) date.min = new Date().toISOString().split("T")[0];
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!AppointmentForm.endpoint) {
+          status.textContent = "El formulario está preparado. Falta conectar el enlace de Google Apps Script.";
+          status.className = "appointment-form__status is-error";
+          return;
+        }
+        var trap = form.elements.website;
+        if (trap && trap.value) return;
+        var submit = form.querySelector('[type="submit"]');
+        submit.disabled = true;
+        status.textContent = "Enviando solicitud…";
+        fetch(AppointmentForm.endpoint, {
+          method: "POST",
+          mode: "no-cors",
+          body: new URLSearchParams(new FormData(form))
+        }).then(function () {
+          form.reset();
+          if (date) date.min = new Date().toISOString().split("T")[0];
+          status.textContent = "Solicitud enviada. Te contactaremos por WhatsApp para confirmar disponibilidad.";
+          status.className = "appointment-form__status is-success";
+        }).catch(function () {
+          status.textContent = "No pudimos enviar la solicitud. Escríbenos por WhatsApp para continuar.";
+          status.className = "appointment-form__status is-error";
+        }).finally(function () {
+          submit.disabled = false;
+        });
+      });
+    }
+  };
+
   var SalonNavigation = {
     init: function () {
       var toggle = document.querySelector(".nav-toggle");
@@ -1050,6 +1090,7 @@
     GlassBreadcrumb.init();
     GlassTable.init();
     SalonNavigation.init();
+    AppointmentForm.init();
   }
 
   if (document.readyState === "loading") {
