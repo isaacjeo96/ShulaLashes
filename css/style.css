@@ -2934,7 +2934,7 @@ img {
   animation: cascade-in 0.8s var(--ease-glass) 0.2s both;
 }
 [data-theme="light"] .hero__title {
-  background: linear-gradient(135deg, #0f172a 20%, #0369a1 60%, #7c3aed 100%);
+  background: linear-gradient(135deg, #0f172a 20%, #be185d 60%, #9333ea 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3321,8 +3321,12 @@ label {
 .salon-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; opacity: .62; font-size: .78rem; }
 .salon-section { max-width: 1180px; margin: 0 auto; padding-inline: 24px; }
 .eyebrow { display: block; color: var(--accent-aqua); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px; }
-.service-group { margin-top: 46px; }
-.service-group__title { font-family: var(--font-display); font-size: 1.55rem; margin-bottom: 18px; }
+.service-group { margin-top: 46px; padding: 0 22px 22px; border-radius: var(--radius-lg); }
+.service-group__title { cursor: pointer; list-style: none; padding: 22px 0 18px; font-family: var(--font-display); font-size: 1.55rem; color: var(--accent-rose); }
+.service-group__title::-webkit-details-marker { display: none; }
+.service-group__title::after { content: '+'; float: right; font-family: var(--font-body); font-size: 1.35rem; color: var(--accent-aqua); }
+.service-group[open] .service-group__title::after { content: '−'; }
+.service-group[open] .service-grid { animation: cascade-in var(--dur-mid) var(--ease-smooth) both; }
 .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
 .service-card { padding: 22px; border-radius: var(--radius-lg); display: flex; flex-direction: column; align-items: flex-start; min-height: 195px; }
 .service-card__tag { color: var(--accent-aqua); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; }
@@ -3331,9 +3335,13 @@ label {
 .service-card strong { color: var(--accent-aqua); margin-top: 18px; font-size: .95rem; }
 .service-card small { display: block; font-size: .7rem; opacity: .58; line-height: 1.45; margin-top: 5px; }
 .salon-gallery { padding-top: 30px; }
-.gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; grid-auto-rows: 210px; gap: 14px; }
-.gallery-grid img { width: 100%; height: 100%; object-fit: contain; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--glass-border); }
-.gallery-grid img:first-child { grid-row: span 2; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 170px; gap: 14px; }
+.gallery-grid figure { position: relative; min-height: 0; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--glass-border); background: var(--color-surface); box-shadow: var(--shadow-glass); }
+.gallery-grid figure:nth-child(1), .gallery-grid figure:nth-child(6) { grid-row: span 2; }
+.gallery-grid figure:nth-child(3) { grid-column: span 2; }
+.gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-mid) var(--ease-smooth), filter var(--dur-mid); }
+.gallery-grid figure:hover img { transform: scale(1.06); filter: saturate(1.12); }
+.gallery-grid figcaption { position: absolute; right: 10px; bottom: 10px; left: 10px; padding: 7px 10px; border-radius: var(--radius-full); background: rgba(11, 14, 26, .68); color: #fff; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: var(--blur-sm); }
 .salon-cta { max-width: 780px; margin: 80px auto; padding: 54px 28px; text-align: center; border-radius: var(--radius-2xl); }
 .salon-cta h2 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 12px; }
 .salon-cta p { max-width: 540px; margin: 0 auto 26px; opacity: .7; line-height: 1.65; }
@@ -3445,9 +3453,9 @@ label {
   .service-grid,
   .promo-grid,
   .review-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .gallery-grid img { height: auto; min-height: 180px; }
-  .gallery-grid img:first-child { grid-row: span 1; }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; }
+  .gallery-grid figure:nth-child(3) { grid-column: span 2; }
+  .gallery-grid figure:nth-child(1), .gallery-grid figure:nth-child(6) { grid-row: span 2; }
 }
 
 /* ── Badges — replace rgba() tints built from dark-theme accents ── */
