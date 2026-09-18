@@ -3280,7 +3280,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
   background: transparent;
   transition: padding var(--dur-mid) var(--ease-smooth), background var(--dur-mid), box-shadow var(--dur-mid);
 }
@@ -3295,6 +3295,7 @@ label {
 .brand {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 .brand__logo {
   width: 132px;
@@ -3310,8 +3311,23 @@ label {
 [data-theme="light"] .brand__logo--light {
   display: block;
 }
-.site-nav__links { display: flex; align-items: center; gap: 22px; font-size: .85rem; }
-.site-nav__links { overflow-x: auto; scrollbar-width: none; }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 84px;
+  flex-shrink: 0;
+}
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: .85rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
 .site-nav__links::-webkit-scrollbar { display: none; }
 .site-nav__links a {
   display: inline-flex;
@@ -3356,7 +3372,7 @@ label {
   display: inline-flex;
   position: fixed;
   top: 20px;
-  right: 84px;
+  right: 18px;
   z-index: var(--z-toast);
   width: 46px;
   height: 46px;
@@ -3382,7 +3398,7 @@ label {
   display: flex;
   position: fixed;
   top: 76px;
-  right: 24px;
+  right: 18px;
   z-index: calc(var(--z-overlay) + 1);
   width: min(320px, calc(100vw - 32px));
   padding: 12px;
@@ -3401,6 +3417,44 @@ label {
 .site-nav .site-nav__links.is-open .glass-btn {
   display: flex;
   margin-top: 0;
+}
+
+.theme-toggle-btn {
+  position: static;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--dur-fast) var(--ease-liquid),
+    box-shadow var(--dur-fast);
+}
+.theme-toggle-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.theme-toggle-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+.theme-toggle-btn .icon-dark {
+  display: block;
+}
+.theme-toggle-btn .icon-light {
+  display: none;
+}
+[data-theme="light"] .theme-toggle-btn .icon-dark {
+  display: none;
+}
+[data-theme="light"] .theme-toggle-btn .icon-light {
+  display: block;
 }
 .salon-hero { min-height: 78vh; padding-top: 54px; }
 .salon-hero .hero__sub { max-width: 650px; }
