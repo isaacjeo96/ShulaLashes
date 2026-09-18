@@ -1011,6 +1011,9 @@
       var legacyName = form.elements.name;
       var firstName = form.elements.firstName;
       var lastName = form.elements.lastName;
+      var selectionList = document.getElementById("appointment-selection-list");
+      var selectionEmpty = document.getElementById("appointment-selection-empty");
+      var serviceButtons = [];
       var localDate = function (value) {
         var current = value || new Date();
         var year = current.getFullYear();
@@ -1048,6 +1051,57 @@
         var error = validateSchedule();
         if (error) status.textContent = error;
       });
+
+      var updateServiceSelection = function () {
+        var selected = Array.from(services.selectedOptions).map(function (option) { return option.value; });
+        serviceButtons.forEach(function (button) {
+          var active = selected.indexOf(button.getAttribute("data-service")) !== -1;
+          button.classList.toggle("is-selected", active);
+          button.setAttribute("aria-pressed", String(active));
+          button.textContent = active ? "Agregado" : "Agregar a mi cita";
+        });
+        if (selectionEmpty) selectionEmpty.hidden = selected.length > 0;
+        if (selectionList) {
+          selectionList.innerHTML = "";
+          selected.forEach(function (name) {
+            var item = document.createElement("span");
+            item.className = "appointment-selection__item";
+            item.textContent = name;
+            var remove = document.createElement("button");
+            remove.type = "button";
+            remove.className = "appointment-selection__remove";
+            remove.textContent = "Quitar";
+            remove.addEventListener("click", function () {
+              var option = Array.from(services.options).find(function (candidate) { return candidate.value === name; });
+              if (option) option.selected = false;
+              updateServiceSelection();
+            });
+            item.appendChild(remove);
+            selectionList.appendChild(item);
+          });
+        }
+      };
+
+      document.querySelectorAll(".service-card").forEach(function (card) {
+        var heading = card.querySelector("h4");
+        if (!heading || !services) return;
+        var name = heading.textContent.trim();
+        var option = Array.from(services.options).find(function (candidate) { return candidate.value === name; });
+        if (!option) return;
+        var button = document.createElement("button");
+        button.type = "button";
+        button.className = "service-card__add";
+        button.setAttribute("data-service", name);
+        button.setAttribute("aria-pressed", "false");
+        button.textContent = "Agregar a mi cita";
+        button.addEventListener("click", function () {
+          option.selected = !option.selected;
+          updateServiceSelection();
+        });
+        card.appendChild(button);
+        serviceButtons.push(button);
+      });
+      updateServiceSelection();
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -1101,6 +1155,7 @@
       var toggle = document.querySelector(".nav-toggle");
       var menu = document.getElementById("primary-menu");
       if (!toggle || !menu) return;
+      var nav = document.querySelector(".site-nav");
 
       var close = function () {
         menu.classList.remove("is-open");
@@ -1128,6 +1183,11 @@
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") close();
       });
+      var syncScrollState = function () {
+        if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 24);
+      };
+      window.addEventListener("scroll", syncScrollState, { passive: true });
+      syncScrollState();
     }
   };
 

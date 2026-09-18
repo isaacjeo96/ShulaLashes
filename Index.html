@@ -64,7 +64,7 @@
         <span class="section__subtitle">Precios en MXN</span>
       </div>
 
-      <details class="service-group glass" open>
+      <details class="service-group" open>
         <summary class="service-group__title">Pestañas y cejas</summary>
         <div class="service-grid">
           <article class="glass glass-card service-card"><span class="service-card__tag">Mirada</span><h4>Pestañas clásicas</h4><p>Una extensión por cada pestaña natural para un efecto de rímel elegante.</p><strong>$650 MXN</strong><small>Tiempo aproximado de realización: 2 a 2 h 30 min</small></article>
@@ -80,7 +80,7 @@
         </div>
       </details>
 
-      <details class="service-group glass" open>
+      <details class="service-group" open>
         <summary class="service-group__title">Cabello</summary>
         <div class="service-grid">
           <article class="glass glass-card service-card"><span class="service-card__tag">Cabello</span><h4>Corte de cabello</h4><p>Diseño adaptado a tu rostro y tipo de cabello para mantenerlo sano y con forma.</p><strong>$120 MXN</strong><small>Tiempo aproximado de realización: 50 min</small></article>
@@ -89,7 +89,7 @@
         </div>
       </details>
 
-      <details class="service-group glass" open>
+      <details class="service-group" open>
         <summary class="service-group__title">Uñas, pies y cuidado facial</summary>
         <div class="service-grid">
           <article class="glass glass-card service-card"><span class="service-card__tag">Pies</span><h4>Pedi-Spa</h4><p>Relajación, exfoliación y limpieza profunda para tus pies.</p><strong>$380 MXN</strong><small>Tiempo aproximado de realización: 2 horas</small></article>
@@ -101,7 +101,7 @@
         </div>
       </details>
 
-      <details class="service-group glass" open>
+      <details class="service-group" open>
         <summary class="service-group__title">Otros tratamientos</summary>
         <div class="service-grid">
           <article class="glass glass-card service-card"><span class="service-card__tag">Piel</span><h4>Depilación con cera</h4><p>Retiro de vello con cera de alta calidad para una piel suave.</p><strong>$150 MXN</strong><small>Tiempo aproximado de realización: hasta 1 hora, según la zona</small></article>
@@ -169,6 +169,11 @@
             <option>Pedi-Spa</option><option>Acripie</option><option>Base Rubber</option><option>Gelish manos</option><option>Gelish pies</option><option>Limpieza facial</option>
             <option>Depilación con cera</option><option>Perforaciones</option><option>Eliminación de verrugas</option>
           </select></label>
+          <div class="appointment-selection appointment-form__wide" id="appointment-selection" aria-live="polite">
+            <strong>Mi cita</strong>
+            <span id="appointment-selection-empty">Aún no has agregado servicios.</span>
+            <div id="appointment-selection-list"></div>
+          </div>
           <input name="service" type="hidden">
           <label>Fecha preferida<input class="glass-input" name="date" type="date" required></label>
           <label>Hora preferida<input class="glass-input" name="time" type="time" step="900" required></label>
