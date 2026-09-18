@@ -3297,6 +3297,16 @@ label {
 .brand {
   display: inline-flex;
   align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  z-index: calc(var(--z-overlay) + 2);
+  padding: 8px 12px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass-white);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
 }
 .brand__logo {
   width: 132px;
@@ -3358,7 +3368,7 @@ label {
   display: inline-flex;
   position: fixed;
   top: 20px;
-  right: 24px;
+  right: 84px;
   z-index: calc(var(--z-overlay) + 2);
   width: 46px;
   height: 46px;
@@ -3520,13 +3530,14 @@ label {
 .footer-link--social svg rect, .footer-link--social svg circle { fill: none; }
 .footer-link--social svg .icon-fill { fill: currentColor; stroke: none; }
 @media (max-width: 640px) {
-  .theme-toggle-btn { right: 76px; }
+  .theme-toggle-btn { right: 20px; }
   .site-nav { padding: 14px 72px 14px 20px; }
   .nav-toggle { display: flex; }
   .nav-toggle__line { width: 17px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s, opacity .2s; }
   .nav-toggle[aria-expanded="true"] .nav-toggle__line:first-child { transform: translateY(6px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] .nav-toggle__line:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] .nav-toggle__line:last-child { transform: translateY(-6px) rotate(-45deg); }
+  .site-nav .nav-toggle { right: 76px; }
   .site-nav__links { max-width: none; }
   .site-nav__links a:not(.glass-btn) {
     white-space: nowrap;
