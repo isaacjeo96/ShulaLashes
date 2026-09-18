@@ -3200,10 +3200,8 @@ label {
        30. THEME TOGGLE
        -------------------------------------------------------------------------- */
 .theme-toggle-btn {
-  position: fixed;
-  top: var(--space-md);
-  right: var(--space-md);
-  z-index: var(--z-toast);
+  position: static;
+  flex: 0 0 auto;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -3297,10 +3295,6 @@ label {
 .brand {
   display: inline-flex;
   align-items: center;
-  position: fixed;
-  top: 20px;
-  left: 24px;
-  z-index: calc(var(--z-overlay) + 2);
   padding: 8px 12px;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
@@ -3530,7 +3524,6 @@ label {
 .footer-link--social svg rect, .footer-link--social svg circle { fill: none; }
 .footer-link--social svg .icon-fill { fill: currentColor; stroke: none; }
 @media (max-width: 640px) {
-  .theme-toggle-btn { right: 20px; }
   .site-nav { padding: 14px 72px 14px 20px; }
   .nav-toggle { display: flex; }
   .nav-toggle__line { width: 17px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s, opacity .2s; }
