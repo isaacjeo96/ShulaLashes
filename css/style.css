@@ -3295,12 +3295,6 @@ label {
 .brand {
   display: inline-flex;
   align-items: center;
-  padding: 8px 12px;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  background: var(--glass-white);
-  backdrop-filter: var(--blur-sm);
-  -webkit-backdrop-filter: var(--blur-sm);
 }
 .brand__logo {
   width: 132px;
@@ -3363,13 +3357,23 @@ label {
   position: fixed;
   top: 20px;
   right: 84px;
-  z-index: calc(var(--z-overlay) + 2);
+  z-index: var(--z-toast);
   width: 46px;
   height: 46px;
   padding: 0;
+  color: var(--color-text);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-white);
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+}
+.site-nav .nav-toggle__line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
 }
 .site-nav .site-nav__links {
   display: none;
