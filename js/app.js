@@ -1155,7 +1155,6 @@
       var toggle = document.querySelector(".nav-toggle");
       var menu = document.getElementById("primary-menu");
       if (!toggle || !menu) return;
-      var nav = document.querySelector(".site-nav");
 
       var close = function () {
         menu.classList.remove("is-open");
@@ -1183,11 +1182,6 @@
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") close();
       });
-      var syncScrollState = function () {
-        if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 24);
-      };
-      window.addEventListener("scroll", syncScrollState, { passive: true });
-      syncScrollState();
     }
   };
 
