@@ -271,6 +271,15 @@ body {
     color var(--dur-mid) var(--ease-smooth);
 }
 
+main,
+section,
+.service-group,
+.gallery-grid,
+.appointment-form {
+  contain: layout paint;
+  content-visibility: auto;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -279,6 +288,16 @@ a {
 img {
   display: block;
   max-width: 100%;
+  content-visibility: auto;
+}
+
+.scene__blob,
+.glass,
+.glass-card,
+.service-card,
+.gallery-grid figure,
+.site-nav__links.is-open {
+  will-change: transform, opacity;
 }
 
 /* --------------------------------------------------------------------------
@@ -3241,6 +3260,19 @@ label {
        31. RESPONSIVE
        -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  .glass,
+  .glass-card,
+  .service-group,
+  .appointment-form,
+  .site-nav__links.is-open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .scene__blob {
+    filter: blur(40px);
+  }
+
   .glass-form__row {
     grid-template-columns: 1fr;
   }
