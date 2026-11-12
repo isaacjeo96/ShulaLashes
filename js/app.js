@@ -56,16 +56,40 @@
       var btn = document.getElementById("theme-toggle");
       var root = document.documentElement;
       var key = "glass-theme";
-      var saved = localStorage.getItem(key);
-      if (saved) root.setAttribute("data-theme", saved);
+      /* Storage can throw (private mode, blocked site data): never let that break the toggle */
+      var read = function () {
+        try { return localStorage.getItem(key); } catch (e) { return null; }
+      };
+      var write = function (value) {
+        try { localStorage.setItem(key, value); } catch (e) {}
+      };
+      var apply = function (theme) {
+        root.setAttribute("data-theme", theme);
+        emit(root, "theme:change", { theme: theme });
+      };
+
+      /* The inline <head> script sets the initial theme; this is a fallback if it didn't run */
+      if (!root.hasAttribute("data-theme")) {
+        var saved = read();
+        if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+      }
+
+      /* Follow the system theme until the visitor picks one explicitly */
+      if (window.matchMedia) {
+        var mq = window.matchMedia("(prefers-color-scheme: light)");
+        var onSystemChange = function (evt) {
+          if (!read()) apply(evt.matches ? "light" : "dark");
+        };
+        if (mq.addEventListener) mq.addEventListener("change", onSystemChange);
+        else if (mq.addListener) mq.addListener(onSystemChange);
+      }
 
       if (btn) {
         btn.addEventListener("click", function () {
           var next =
             root.getAttribute("data-theme") === "light" ? "dark" : "light";
-          root.setAttribute("data-theme", next);
-          localStorage.setItem(key, next);
-          emit(root, "theme:change", { theme: next });
+          write(next);
+          apply(next);
         });
       }
     }

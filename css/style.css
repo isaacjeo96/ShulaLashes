@@ -291,13 +291,18 @@ img {
   content-visibility: auto;
 }
 
+/* will-change only where something animates continuously or is open on screen;
+   at rest on every card it pins dozens of GPU layers behind blurred glass. */
 .scene__blob,
-.glass,
-.glass-card,
-.service-card,
-.gallery-grid figure,
 .site-nav__links.is-open {
   will-change: transform, opacity;
+}
+
+/* Keep each glass surface its own stacking context (will-change used to provide this),
+   so inner z-index layers never climb over the nav, and rounded clipping holds in Safari. */
+.glass,
+.gallery-grid figure {
+  isolation: isolate;
 }
 
 /* --------------------------------------------------------------------------
