@@ -4227,3 +4227,16 @@ label {
 .footer__cta-buttons .glass-btn:hover .footer__cta-icon {
   transform: scale(1.12) rotate(-4deg);
 }
+
+/* Botón de WhatsApp con aviso "solo mensajes" en segunda línea */
+.btn-whatsapp {
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.2;
+}
+.btn-whatsapp small {
+  font-size: 0.72em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+}
